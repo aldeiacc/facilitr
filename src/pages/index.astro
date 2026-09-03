@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { decodeEntities, findPage, staticHtml } from '../lib/wp';
+
+const page = findPage('home');
+const title = `Facilitr - ${decodeEntities(page.title.rendered)}`;
+const description = decodeEntities(page.excerpt.rendered);
+---
+
+<BaseLayout title={title} description={description} canonical="/">
+  <Fragment set:html={staticHtml(page.content.rendered)} />
+</BaseLayout>

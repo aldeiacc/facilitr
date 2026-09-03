@@ -1,0 +1,11 @@
+node_modules
+dist
+.astro
+.DS_Store
+.env
+.env.*
+*.sql
+*.sql.txt
+wp-config.php
+facilitr-readonly-*.tar.gz
+facilitr-hetzner-*.tar.gz

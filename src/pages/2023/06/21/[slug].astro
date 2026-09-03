@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import { decodeEntities, postPath, posts, staticHtml, type WpPost } from '../../../../lib/wp';
+
+export function getStaticPaths() {
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props as { post: WpPost };
+const title = `${decodeEntities(post.title.rendered)} - Facilitr`;
+const description = decodeEntities(post.excerpt.rendered);
+---
+
+<BaseLayout title={title} description={description} canonical={postPath(post)}>
+  <Fragment set:html={staticHtml(post.content.rendered)} />
+</BaseLayout>

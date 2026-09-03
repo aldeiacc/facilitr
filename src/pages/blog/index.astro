@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { decodeEntities, findPage, staticHtml } from '../../lib/wp';
+
+const page = findPage('blog');
+const title = `${decodeEntities(page.title.rendered)} - Facilitr`;
+const description = 'Desenvolva as habilidades essenciais para liderar grupos de forma eficaz.';
+---
+
+<BaseLayout title={title} description={description} canonical="/blog/">
+  <Fragment set:html={staticHtml(page.content.rendered)} />
+</BaseLayout>

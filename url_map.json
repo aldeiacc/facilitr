@@ -1,0 +1,47 @@
+{
+  "source": "https://facilitr.org",
+  "urls": [
+    {
+      "type": "page",
+      "id": 384279,
+      "slug": "home",
+      "url": "https://facilitr.org/",
+      "status": "publish"
+    },
+    {
+      "type": "post",
+      "id": 383748,
+      "slug": "montando-a-agenda-de-um-workshop",
+      "url": "https://facilitr.org/2023/06/21/montando-a-agenda-de-um-workshop/",
+      "status": "publish"
+    },
+    {
+      "type": "post",
+      "id": 383802,
+      "slug": "pensando-fora-da-caixa-estruturas-libertadoras",
+      "url": "https://facilitr.org/2023/06/21/pensando-fora-da-caixa-estruturas-libertadoras/",
+      "status": "publish"
+    },
+    {
+      "type": "post",
+      "id": 383806,
+      "slug": "teoria-u-na-facilitacao",
+      "url": "https://facilitr.org/2023/06/21/teoria-u-na-facilitacao/",
+      "status": "publish"
+    },
+    {
+      "type": "post",
+      "id": 383814,
+      "slug": "transforme-conflitos-em-oportunidades",
+      "url": "https://facilitr.org/2023/06/21/transforme-conflitos-em-oportunidades/",
+      "status": "publish"
+    },
+    {
+      "type": "page",
+      "id": 384314,
+      "slug": "blog",
+      "url": "https://facilitr.org/blog/",
+      "status": "publish"
+    }
+  ]
+}

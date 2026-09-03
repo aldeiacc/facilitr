@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&family=Roboto+Slab:wght@400;600&family=Open+Sans:wght@400;700;800&family=Titillium+Web:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --site-max: 1140px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: #1e1e1e;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+img,
+svg,
+video,
+iframe {
+  max-width: 100%;
+}
+
+main {
+  min-height: 70vh;
+}
+
+.wp-static-page {
+  overflow-x: clip;
+}
+
+.wp-static-page a[href*='wp-admin'],
+.wp-static-page a[href*='wp-login'],
+.wp-static-page script {
+  display: none !important;
+}
+
+.wp-static-page .elementor-nav-menu a[href='https://facilitr.org/'] {
+  href: '/';
+}
+
+.wp-block-button__link,
+.elementor-button {
+  transition: transform 180ms ease, filter 180ms ease;
+}
+
+.wp-block-button__link:hover,
+.elementor-button:hover {
+  filter: brightness(1.03);
+  transform: translateY(-1px);
+}
+
+.static-fallback-header {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .elementor-nav-menu--main {
+    display: none;
+  }
+
+  .elementor-menu-toggle {
+    display: inline-flex;
+  }
+}
