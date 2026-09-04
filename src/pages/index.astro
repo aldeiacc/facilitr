@@ -7,6 +7,12 @@ const title = `Facilitr - ${decodeEntities(page.title.rendered)}`;
 const description = decodeEntities(page.excerpt.rendered);
 ---
 
-<BaseLayout title={title} description={description} canonical="/">
+<BaseLayout
+  title={title}
+  description={description}
+  canonical="/"
+  bodyClass="home page-template-default page page-id-384279 elementor-default elementor-page elementor-page-384279"
+>
+  <h1 class="sr-only">Facilitr</h1>
   <Fragment set:html={staticHtml(page.content.rendered)} />
 </BaseLayout>

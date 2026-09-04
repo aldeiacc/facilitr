@@ -1,0 +1,90 @@
+body {
+  overflow-x: hidden;
+}
+
+.wp-static-page {
+  overflow-x: clip;
+}
+
+.wp-static-page .home-testimonials,
+.wp-static-page .home-testimonials__viewport,
+.wp-static-page .home-diagram,
+.wp-static-page .home-diagram__viewport,
+.wp-static-page .swiper,
+.wp-static-page .elementor-swiper {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.wp-static-page input[name='website'],
+.wp-static-page #website {
+  position: fixed !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.wp-static-page .e-font-icon-svg,
+.wp-static-page .elementor-icon svg,
+.wp-static-page .elementor-button-icon svg,
+.wp-static-page .elementor-menu-toggle svg,
+.wp-static-page .elementor-tab-title svg,
+.wp-static-page .elementor-toggle-icon svg {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  max-width: 1em;
+  flex: 0 0 auto;
+  fill: currentColor;
+}
+
+.wp-static-page .elementor-tab-title,
+.wp-static-page .elementor-toggle-title {
+  align-items: center;
+}
+
+.wp-static-page .elementor-toggle-icon,
+.wp-static-page .elementor-accordion-icon {
+  display: inline-flex;
+  width: 1.25em;
+  height: 1.25em;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.wp-static-page .elementor-toggle .elementor-tab-content {
+  display: none;
+}
+
+.wp-static-page .static-author-avatar {
+  display: inline-flex;
+}
+
+.static-post-shell {
+  background: #fff;
+  color: #1e1e1e;
+  padding: clamp(56px, 9vw, 112px) 20px clamp(28px, 5vw, 56px);
+}
+
+.static-post-header {
+  width: min(920px, 100%);
+  margin: 0 auto;
+}
+
+.static-post-kicker {
+  margin: 0 0 12px;
+  color: #767676;
+  font: 700 0.78rem/1.2 Roboto, Arial, sans-serif;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.static-post-header h1 {
+  margin: 0;
+  color: #111;
+  font: 800 clamp(2rem, 5vw, 4.2rem)/1.05 Roboto, Arial, sans-serif;
+}

@@ -31,6 +31,18 @@ main {
   min-height: 70vh;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .wp-static-page {
   overflow-x: clip;
 }
@@ -39,10 +51,6 @@ main {
 .wp-static-page a[href*='wp-login'],
 .wp-static-page script {
   display: none !important;
-}
-
-.wp-static-page .elementor-nav-menu a[href='https://facilitr.org/'] {
-  href: '/';
 }
 
 .wp-block-button__link,

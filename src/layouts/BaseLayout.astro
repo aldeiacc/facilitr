@@ -1,17 +1,21 @@
 ---
 import '../styles/global.css';
 import '../styles/elementor-legacy.css';
+import '../styles/wordpress-critical.css';
+import '../styles/static-overrides.css';
 
 type Props = {
   title: string;
   description?: string;
   canonical?: string;
+  bodyClass?: string;
 };
 
 const {
   title,
   description = 'Nucleo de Facilitacao, Lideranca e Transformacao.',
   canonical = Astro.url.pathname,
+  bodyClass = '',
 } = Astro.props;
 
 const canonicalUrl = new URL(canonical, Astro.site ?? 'https://facilitr.org').toString();
@@ -31,7 +35,7 @@ const canonicalUrl = new URL(canonical, Astro.site ?? 'https://facilitr.org').to
     <meta property="og:url" content={canonicalUrl} />
     <meta name="twitter:card" content="summary_large_image" />
   </head>
-  <body class="elementor-kit-6">
+  <body class:list={['elementor-kit-6', bodyClass]}>
     <main class="wp-static-page">
       <slot />
     </main>

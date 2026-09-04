@@ -14,6 +14,17 @@ const title = `${decodeEntities(post.title.rendered)} - Facilitr`;
 const description = decodeEntities(post.excerpt.rendered);
 ---
 
-<BaseLayout title={title} description={description} canonical={postPath(post)}>
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={postPath(post)}
+  bodyClass={`post-template-default single single-post postid-${post.id} elementor-default elementor-page elementor-page-384286`}
+>
+  <article class="static-post-shell">
+    <header class="static-post-header">
+      <p class="static-post-kicker">Facilitr Blog</p>
+      <h1>{decodeEntities(post.title.rendered)}</h1>
+    </header>
+  </article>
   <Fragment set:html={staticHtml(post.content.rendered)} />
 </BaseLayout>
