@@ -1,18 +1,167 @@
 ---
+import FacilitrFooter from '../components/FacilitrFooter.astro';
+import FacilitrHeader from '../components/FacilitrHeader.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { decodeEntities, findPage, staticHtml } from '../lib/wp';
+import { blogCards, clientLogos, communityUrl, faqItems, introCourseUrl, liveCards } from '../data/facilitr';
 
-const page = findPage('home');
-const title = `Facilitr - ${decodeEntities(page.title.rendered)}`;
-const description = decodeEntities(page.excerpt.rendered);
+const description = 'Somos o primeiro e único Núcleo de Facilitação do Brasil.';
+const pillars = [
+  {
+    title: 'O Núcleo',
+    text: 'Nosso compromisso é conectar facilitadores e facilitadoras formando uma forte comunidade, a fim de trocar experiências reais, ampliar networking, e conquistar novos negócios.',
+    icon: 'network',
+  },
+  {
+    title: 'O Curso',
+    text: 'Entendemos os desafios de ser um profissional da facilitação. Por isso, desenhamos o curso Facilitr, 8 módulos com conteúdos altamente aplicáveis.',
+    icon: 'course',
+    href: introCourseUrl,
+    cta: 'Assistir introdução',
+  },
+  {
+    title: 'Comunidade',
+    text: 'Conecte-se com os melhores e mais relevantes profissionais da área, e participe de discussões sobre os temas mais abordados em dinâmicas de facilitação.',
+    icon: 'community',
+  },
+];
+
+const reasons = [
+  'Esteja conectado com pessoas facilitadoras do brasil e do mundo',
+  'Participe de discussões sobre os temas mais relevantes da área',
+  'Embarque em webnars com grandes referências na área',
+  'Descontos em eventos para pessoas facilitadoras',
+];
+
+const communityBenefits = [
+  ['Troque Experiências', 'Compartilhe desafios, soluções e insights com um grupo diversificado de profissionais apaixonados'],
+  ['Expanda sua rede', 'Conecte-se com facilitadores experientes e influentes, ampliando seu networking profissional'],
+  ['Aprenda Continuamente', 'Participe de discussões que aprofundam o conhecimento e desenvolvam suas habilidades'],
+  ['Se desenvolva', 'Contribua e beneficie-se de recursos compartilhados e feedback construtivo, acelerando seu crescimento como facilitador.'],
+];
 ---
 
-<BaseLayout
-  title={title}
-  description={description}
-  canonical="/"
-  bodyClass="home page-template-default page page-id-384279 elementor-default elementor-page elementor-page-384279"
->
-  <h1 class="sr-only">Facilitr</h1>
-  <Fragment set:html={staticHtml(page.content.rendered)} />
+<BaseLayout title="Facilitr" description={description} canonical="/" bodyClass="facilitr-page facilitr-home">
+  <FacilitrHeader active="home" />
+
+  <section class="facilitr-hero">
+    <div class="facilitr-blob facilitr-blob--one"></div>
+    <div class="facilitr-blob facilitr-blob--two"></div>
+    <div class="facilitr-hero__content">
+      <p class="facilitr-kicker">Comunidade</p>
+      <h1>Junte-se a nossa comunidade de pessoas facilitadoras</h1>
+      <p>Somos o primeiro e único Núcleo de Facilitação do Brasil</p>
+      <a class="facilitr-button" href={communityUrl} target="_blank" rel="noreferrer">Comunidade</a>
+    </div>
+  </section>
+
+  <section class="facilitr-section facilitr-pillars" aria-label="Sobre o Facilitr">
+    <div class="facilitr-grid facilitr-grid--three">
+      {pillars.map((pillar) => (
+        <article class="facilitr-card facilitr-card--pillar">
+          <span class:list={['facilitr-icon', `facilitr-icon--${pillar.icon}`]} aria-hidden="true"></span>
+          <h2>{pillar.title}</h2>
+          <p>{pillar.text}</p>
+          {pillar.href && <a class="facilitr-link" href={pillar.href} target="_blank" rel="noreferrer">{pillar.cta}</a>}
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="facilitr-section facilitr-background">
+    <div class="facilitr-section__intro">
+      <p class="facilitr-kicker">Nosso background</p>
+      <h2>O Facilitr foi criado em parceria com a Aldeia InCompany</h2>
+      <p>Uma das frentes mais influentes em Facilitação do sul do país. Já facilitamos para empresas como:</p>
+    </div>
+    <div class="facilitr-logo-cloud" aria-label="Empresas atendidas">
+      {clientLogos.map((logo) => <img src={logo.src} alt={logo.alt} loading="lazy" />)}
+    </div>
+  </section>
+
+  <section class="facilitr-section facilitr-reasons">
+    <div class="facilitr-section__intro">
+      <h2>Por que se juntar ao Facilitr?</h2>
+    </div>
+    <div class="facilitr-grid facilitr-grid--four">
+      {reasons.map((reason, index) => (
+        <article class="facilitr-step">
+          <span>{index + 1}</span>
+          <p>{reason}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="facilitr-section facilitr-lives">
+    <div class="facilitr-section__intro">
+      <h2>Acompanhe nossas lives</h2>
+    </div>
+    <div class="facilitr-grid facilitr-grid--two">
+      {liveCards.map((live) => (
+        <article class="facilitr-video-card">
+          <a class="facilitr-video-card__media" href={live.youtube} target="_blank" rel="noreferrer" aria-label={`Assistir live de ${live.speaker}`}>
+            <img src={live.thumb} alt="" loading="lazy" />
+            <span class="facilitr-play" aria-hidden="true"></span>
+          </a>
+          <div>
+            <p class="facilitr-kicker">{live.speaker}</p>
+            <h3>{live.title}</h3>
+            <p>{live.text}</p>
+            <a class="facilitr-link" href={live.youtube} target="_blank" rel="noreferrer">Saiba Mais</a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="facilitr-section facilitr-community">
+    <div class="facilitr-section__intro">
+      <h2>Faça parte da Comunidade</h2>
+    </div>
+    <div class="facilitr-grid facilitr-grid--four">
+      {communityBenefits.map(([title, text], index) => (
+        <article class="facilitr-benefit">
+          <span class="facilitr-benefit__icon" aria-hidden="true">{index + 1}</span>
+          <h3>{title}</h3>
+          <p>{text}</p>
+        </article>
+      ))}
+    </div>
+    <a class="facilitr-button" href={communityUrl} target="_blank" rel="noreferrer">Comunidade</a>
+  </section>
+
+  <section class="facilitr-section facilitr-blog-preview">
+    <div class="facilitr-section__intro">
+      <h2>Conteúdos recentes</h2>
+    </div>
+    <div class="facilitr-grid facilitr-grid--four">
+      {blogCards.map((post) => (
+        <a class="facilitr-post-card" href={post.href}>
+          <img src={post.image} alt="" loading="eager" />
+          <span>Live</span>
+          <h3>{post.title}</h3>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="facilitr-section facilitr-faq">
+    <div class="facilitr-section__intro">
+      <p class="facilitr-kicker">Perguntas frequentes</p>
+      <h2>Somos o Núcleo de Facilitação, Liderança e Transformação</h2>
+      <p>Facilitadores profissionais movidos por uma paixão genuína em promover a transformação em organizações e indivíduos.</p>
+    </div>
+    <div class="facilitr-accordion">
+      {faqItems.map((item, index) => (
+        <details class="facilitr-faq-item" open={index === 0}>
+          <summary>{item.question}</summary>
+          <div>
+            {item.answer.map((paragraph) => <p>{paragraph}</p>)}
+          </div>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <FacilitrFooter />
 </BaseLayout>

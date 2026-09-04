@@ -1,0 +1,20 @@
+---
+type Props = {
+  active?: 'home' | 'blog';
+};
+
+const { active = 'home' } = Astro.props;
+const logoMark = 'https://facilitr.org/wp-content/uploads/2024/06/Nucleo-de-Facilitacao-lideranca-e-Transformacao-Branca.webp';
+const logoText = 'https://facilitr.org/wp-content/uploads/2024/06/logo-fundo-transparente-1024x256.png';
+---
+
+<header class="facilitr-header">
+  <a class="facilitr-header__brand" href="/" aria-label="Facilitr Home">
+    <img src={logoMark} alt="" width="504" height="270" />
+    <img src={logoText} alt="Facilitr" width="800" height="200" />
+  </a>
+  <nav class="facilitr-nav" aria-label="Navegacao principal">
+    <a class:list={[active === 'home' && 'is-active']} href="/">Home</a>
+    <a class:list={[active === 'blog' && 'is-active']} href="/blog/">Blog</a>
+  </nav>
+</header>
