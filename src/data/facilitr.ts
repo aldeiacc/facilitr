@@ -22,7 +22,7 @@ export const clientLogos = [
   'Prancheta-1-copia-3-100.jpg',
   'Prancheta-1-copia-2-100.jpg',
 ].map((file) => ({
-  src: `https://facilitr.org/wp-content/uploads/2024/06/${file}`,
+  src: `/wp-content/uploads/2024/06/${file}`,
   alt: '',
 }));
 
@@ -30,25 +30,25 @@ export const blogCards = [
   {
     title: 'Montando a Agenda de um Workshop',
     excerpt: 'Nesta live, vamos mergulhar em detalhes práticos e estratégias essenciais para montar uma agenda de workshop que realmente funcione.',
-    image: 'https://facilitr.org/wp-content/uploads/2023/06/image1-1024x576.png',
+    image: '/wp-content/uploads/2023/06/image1-1024x576.png',
     slug: 'montando-a-agenda-de-um-workshop',
   },
   {
     title: 'Pensando fora da caixa: Estruturas Libertadoras',
     excerpt: 'Nesta live, vamos explorar técnicas de facilitação inovadoras desenvolvidas por Henri Lipmanowicz e Keith McCandless.',
-    image: 'https://facilitr.org/wp-content/uploads/2023/06/image6-1024x576.png',
+    image: '/wp-content/uploads/2023/06/image6-1024x576.png',
     slug: 'pensando-fora-da-caixa-estruturas-libertadoras',
   },
   {
     title: 'Teoria "U" na Facilitação',
     excerpt: 'Vamos mergulhar juntos nesta live onde exploraremos a fascinante Teoria U, que molda líderes, equipes e organizações ao redor do mundo.',
-    image: 'https://facilitr.org/wp-content/uploads/2023/06/image4-1024x576.png',
+    image: '/wp-content/uploads/2023/06/image4-1024x576.png',
     slug: 'teoria-u-na-facilitacao',
   },
   {
     title: 'Transforme Conflitos em Oportunidades',
     excerpt: 'Como um facilitador pode converter diálogos desafiadores em oportunidades significativas de aprendizado?',
-    image: 'https://facilitr.org/wp-content/uploads/2023/06/image5-1024x576.png',
+    image: '/wp-content/uploads/2023/06/image5-1024x576.png',
     slug: 'transforme-conflitos-em-oportunidades',
   },
 ].map((card) => {

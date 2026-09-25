@@ -186,7 +186,7 @@ body {
   color: #fff;
   background:
     linear-gradient(rgba(7, 8, 18, .5), rgba(7, 8, 18, .64)),
-    url("https://facilitr.org/wp-content/uploads/2024/09/Captura-de-tela-2024-04-25-183031.png") center / cover,
+    url("/wp-content/uploads/2024/09/Captura-de-tela-2024-04-25-183031.png") center / cover,
     #1b252f;
 }
 
